@@ -1,0 +1,16 @@
+<div id="section-testimonials">
+    <div id="testimonials">
+        <div class="title">Clientes que nos garantem</div>
+        <div class="testimonials">
+            <ul>
+                {% for testimonial in testimonials %}
+                <li>
+                    <div class="picture"><img src="{{ testimonial.picture }}" /></div>
+                    <div class="description">{{ testimonial.description }}</div>
+                    <div class="author">{{ testimonial.author }} <span>{{ testimonial.position }}</span></div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

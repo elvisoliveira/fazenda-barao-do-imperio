@@ -1,0 +1,81 @@
+---
+title: Barão do Império - VAZ
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" dir="ltr" lang="pt-br">
+    <head>
+        <!-- Meta-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <!-- Scripts-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Styles-->
+        <link rel="stylesheet" type="text/css" href="master.css" />
+        <!-- Browser-->
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <div id="section-header">
+            <div id="top-bar">
+                <div id="menu">
+                    <ul>
+                        <li><a href="#">Portal do Cliente</a></li>
+                        <li><a href="#">Portal do Corretor</a></li>
+                    </ul>
+                </div>
+                {% set search = "Digite seu e-mail" %}
+                <div id="search">
+                    <form action="#">
+                        <dl>
+                            <dt><label for="search">{{ search }}</label></dt>
+                            <dd><input type="text" name="search" placeholder="{{ search }}" /></dd>
+                        </dl>
+                        <input type="submit" value="Enviar" />
+                    </form>
+                </div>
+                <div id="social-network">
+                    <ul>
+                        {% for item in socialNetworks %}
+                            <li><a href="{{ item.link }}">{{ item.vendor }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div id="header">
+                <div class="logo">
+                    <a href="/"><img src="assets/img/logo.png" alt="{{ title }}" /></a>
+                </div>
+                {% set menu = [
+                    { slug: 'home', title: 'Home' },
+                    { slug: 'about', title: 'Sobre a Vaz' },
+                    { slug: 'datasheet', title: 'Ficha T&eacute;cnica' },
+                    { slug: 'contact', title: 'Contato' }
+                ] %}
+                <div class="menu">
+                    <ul>
+                        {% for item in menu %}
+                            <li><a href="#section-{{ item.slug }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="schedule-a-visit">
+                    <a href="#">Agende uma visita!</a>
+                </div>
+                <div class="reserve">
+                    <a href="#">Faça sua reserva!</a>
+                </div>
+            </div>
+        </div>
+        {{ content | safe }}
+        <div id="section-bottom">
+            <div id="bottom">
+                
+            </div>
+        </div>
+        <div id="section-footer">
+            <div id="footer">
+                {% include "newsletter.njk" %}
+            </div>
+        </div>
+    </body>
+</html>

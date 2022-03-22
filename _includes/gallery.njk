@@ -1,0 +1,13 @@
+<div id="section-gallery">
+    <div id="gallery">
+        <div class="title">Escute a natureza e contemple a suas belezas!</div>
+        <div class="gallery">
+            <ul data-cycle-fx=scrollHorz data-cycle-timeout=2000 data-cycle-pager=".gallery-pager">
+                {% for file in galleryFiles() %}
+                <li>{% galleryImage "./images/gallery/" + file, "", "(min-width: 30em) 50vw, 100vw" %}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="gallery-pager"></div>
+    </div>
+</div>
