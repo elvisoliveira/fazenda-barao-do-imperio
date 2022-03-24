@@ -4,7 +4,7 @@
         <div class="gallery">
             <ul data-cycle-fx=scrollHorz data-cycle-timeout=2000 data-cycle-pager=".gallery-pager">
                 {% for file in galleryFiles() %}
-                <li>{% galleryImage "./images/gallery/" + file, "", "(min-width: 30em) 50vw, 100vw" %}</li>
+                <li>{% galleryImage "./gallery/" + file, "", "(min-width: 30em) 50vw, 100vw" %}</li>
                 {% endfor %}
             </ul>
         </div>

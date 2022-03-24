@@ -1,10 +1,11 @@
 const Image = require('@11ty/eleventy-img')
+const svgContents = require("eleventy-plugin-svg-contents");
 const fs = require('fs');
-const dir = 'images/galery'
+const dir = 'galery'
 
 module.exports = function (eleventyConfig) {
-    // eleventyConfig.addPassthroughCopy("images");
-    eleventyConfig.addNunjucksShortcode("galleryImage", (src, alt, sizes) => {
+    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addNunjucksShortcode("galleryImage", function (src, alt, sizes) {
         let options = {
             widths: [300, 600],
             formats: ["avif", "jpeg"],
@@ -19,7 +20,8 @@ module.exports = function (eleventyConfig) {
             decoding: "async",
         });
     });
-    eleventyConfig.addNunjucksGlobal("galleryFiles", function() {
-        return fs.readdirSync('images/gallery');;
+    eleventyConfig.addNunjucksGlobal("galleryFiles", function () {
+        return fs.readdirSync('gallery');;
     });
+    eleventyConfig.addPlugin(svgContents);
 };

@@ -1,6 +1,7 @@
+{% macro newsletter(text) %}
 <form action="#">
     <fieldset>
-        <legend>Cadastre e saiba mais <span>Um dos nossos corretores...</span></legend>
+        <legend>{{ text | safe }}</legend>
         <dl>
             <dt><label for="name">Nome</label></dt>
             <dd><input type="text" placeholder="Nome" name="name" /></dd>
@@ -16,3 +17,4 @@
         <input type="submit" value="Enviar" />
     </fieldset>
 </form>
+{% endmacro %}

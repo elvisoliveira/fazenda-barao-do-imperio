@@ -1,6 +1,7 @@
 ---
 title: Barão do Império - VAZ
 ---
+{% from "newsletter.njk" import newsletter %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" dir="ltr" lang="pt-br">
     <head>
@@ -43,38 +44,38 @@ title: Barão do Império - VAZ
             </div>
             <div id="header">
                 <div class="logo">
-                    <a href="/"><img src="assets/img/logo.png" alt="{{ title }}" /></a>
+                    <a href="/">{{ '/icons/logo.svg' | svgContents | safe }}</a>
                 </div>
                 {% set menu = [
                     { slug: 'home', title: 'Home' },
                     { slug: 'about', title: 'Sobre a Vaz' },
-                    { slug: 'datasheet', title: 'Ficha T&eacute;cnica' },
+                    { slug: 'datasheet', title: 'Ficha Técnica' },
                     { slug: 'contact', title: 'Contato' }
                 ] %}
                 <div class="menu">
                     <ul>
                         {% for item in menu %}
-                            <li><a href="#section-{{ item.slug }}">{{ item.title }}</a></li>
+                            <li><a href="#section-{{ item.slug }}">{{ item.title  }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
                 <div class="schedule-a-visit">
                     <a href="#">Agende uma visita!</a>
                 </div>
-                <div class="reserve">
-                    <a href="#">Faça sua reserva!</a>
+                <div class="contact-the-realtor">
+                    <a href="#">Fale com um corretor</a>
                 </div>
             </div>
         </div>
         {{ content | safe }}
         <div id="section-bottom">
             <div id="bottom">
-                
+                {{ newsletter("Receba em primeira mão as novidades e lançamentos da VAZ Empreendimentos") }}
             </div>
         </div>
         <div id="section-footer">
             <div id="footer">
-                {% include "newsletter.njk" %}
+                {{ newsletter("Receba novidade do empreendimento:") }}
             </div>
         </div>
     </body>
