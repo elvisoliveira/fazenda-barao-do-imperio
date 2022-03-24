@@ -11,7 +11,7 @@ title: Barão do Império - VAZ
         <!-- Scripts-->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- Styles-->
-        <link rel="stylesheet" type="text/css" href="master.css" />
+        <link rel="stylesheet" href="stylesheets/styles.css?timestamp={{ timestamp }}" preload />
         <!-- Browser-->
         <title>{{ title }}</title>
     </head>
@@ -70,7 +70,16 @@ title: Barão do Império - VAZ
         {{ content | safe }}
         <div id="section-bottom">
             <div id="bottom">
+                <div class="logo">
+                    {{ '/icons/logo.svg' | svgContents | safe }}
+                </div>
                 {{ newsletter("Receba em primeira mão as novidades e lançamentos da VAZ Empreendimentos") }}
+                <div class="copyright">© 2021 Vaz Desenvolvimento | Todos os direitos reservados - Política de privacidade</div>
+                <div class="addresses">
+                    <p>ESPIRITO SANTO: Rua Alberto de Oliveira Santos, 40 Ed. Pres. Kennedy, sl 21 a 23, Centro, Vitória | Cep 29010-250. Tel: (27)2142-8886</p>
+                    <p>MATO GROSSO: Rod MT, quadra 21, lote 1, sala 5, Novo Diamantino, Diamantino | Cep 78402-000. Tel: (65)3337-1058</p>
+                    <p>RONDÔNIA: Rua Gonçalves dias, 140 – Centro, Vilhena | Cep 76980-006. Tel: (69)3321-4343</p>
+                </div>
             </div>
         </div>
         <div id="section-footer">

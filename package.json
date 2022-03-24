@@ -4,16 +4,17 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "ELEVENTY_MODE=production eleventy",
+        "serve": "ELEVENTY_MODE=development eleventy --serve"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "@11ty/eleventy": "^1.0.0",
-        "@11ty/eleventy-img": "^2.0.0"
-    },
-    "dependencies": {
-        "eleventy-plugin-svg-contents": "^0.7.0"
+        "@11ty/eleventy-img": "^2.0.0",
+        "eleventy-plugin-dart-sass": "^1.0.3",
+        "eleventy-plugin-svg-contents": "^0.7.0",
+        "html-minifier": "^4.0.0"
     }
 }
