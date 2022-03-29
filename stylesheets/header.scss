@@ -1,0 +1,139 @@
+div#header {
+    height: 110px;
+    div#top-bar {
+        float: left;
+        height: 37px;
+        position: relative;
+        z-index: 999;
+        width: 100%;
+        background-color: #00341C;
+        div.container {
+            display: flex;
+            align-items: center;
+            min-height: 37px;
+            flex-direction: row-reverse;
+            div {
+                float: right;
+            }
+            div#menu {
+                ul {
+                    li {
+                        float: left;
+                        list-style: none;
+                        margin-right: 26px;
+                        font-size: 12px;
+                        a {
+                            color: #FFF;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            div#search {
+                display: none;
+                form {
+                    dl {
+                        float: left;
+                        dt {
+                            float: left;
+                            label {
+
+                            }
+                        }
+                        dd {
+                            float: left;
+                            input {
+
+                            }
+                        }
+                    }
+                    > input {
+
+                    }
+                }
+            }
+            div#social-network {
+                ul {
+                    li {
+                        float: left;
+                        list-style: none;
+                        margin-left: 8px;
+                        &:first-child {
+                            margin: 0;
+                        }
+                        a {
+                            float: left;
+                            svg {
+                                float: left;
+                                width: 20px;
+                                fill: #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > div.container {
+        div.logo {
+            float: left;
+            padding-top: 17px;
+            a {
+                svg {
+                    width: 113px;
+                }
+            }
+        }
+        div.menu {
+            float: left;
+            margin-top: 28px;
+            margin-left: 112px;
+            ul {
+                li {
+                    float: left;
+                    list-style: none;
+                    margin-right: 45px;
+                    a {
+                        color: #000;
+                        font-size: 15px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        div.schedule-a-visit {
+            float: right;
+            height: 73px;
+            width: 196px;
+            margin-right: 56px;
+            a {
+                float: left;
+                width: 100%;
+                color: #FFF;
+                text-decoration: none;
+                text-align: center;
+                margin-top: 14px;
+                height: 44px;
+                border-radius: 19px;
+                line-height: 40px;
+                font-size: 16px;
+                background: transparent linear-gradient(204deg, var(--unnamed-color-006b3f) 0%, #008B52 100%) 0% 0% no-repeat padding-box;
+                background: transparent linear-gradient(204deg, #006B3F 0%, #008B52 100%) 0% 0% no-repeat padding-box;
+                box-shadow: 0px 7px 6px #00000029;
+            }
+        }
+        div.contact-the-realtor {
+            float: right;
+            width: 244px;
+            height: 73px;
+            line-height: 71px;
+            background-color: #F0A20A;
+            text-align: center;
+            a {
+                font-size: 15px;
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}

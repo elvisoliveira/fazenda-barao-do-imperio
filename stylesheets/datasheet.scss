@@ -1,0 +1,31 @@
+div#datasheet {
+    div.container {
+        background-image: url("../images/no-picture.svg");
+        background-size: 600px;
+        background-repeat: no-repeat;
+        background-position: 550px 213px;
+        div.datasheet {
+            width: 400px;
+            float: left;
+            h2 {
+                font-size: 19px;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+            }
+            ul {
+                padding-left: 21px;
+                li {
+                    color: #DC9918;
+                    font-size: 25px;
+                    list-style-type: square;
+                    list-style-position: outside;
+                    margin-bottom: 25px;
+                    span {
+                        color: #565656;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

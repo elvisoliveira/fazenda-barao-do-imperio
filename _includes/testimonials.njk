@@ -1,6 +1,7 @@
-<div id="section-testimonials">
-    <div id="testimonials">
-        <div class="title">Clientes que nos garantem</div>
+{% from "macros.njk" import title %}
+<div class="section" id="testimonials">
+    <div class="container">
+        {{ title("Clientes que nos garantem") }}
         <div class="testimonials">
             <ul>
                 {% for testimonial in testimonials %}

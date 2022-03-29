@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "ELEVENTY_MODE=production eleventy",
-        "serve": "ELEVENTY_MODE=development eleventy --serve"
+        "serve": "ELEVENTY_MODE=development eleventy --serve",
+        "debug": "ELEVENTY_MODE=development && DEBUG=* eleventy --serve"
     },
     "keywords": [],
     "author": "",
@@ -15,6 +16,7 @@
         "@11ty/eleventy-img": "^2.0.0",
         "eleventy-plugin-dart-sass": "^1.0.3",
         "eleventy-plugin-svg-contents": "^0.7.0",
-        "html-minifier": "^4.0.0"
+        "html-minifier": "^4.0.0",
+        "html-minifier-lint": "^2.0.0"
     }
 }

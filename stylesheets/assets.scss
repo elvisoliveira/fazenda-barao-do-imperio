@@ -1,0 +1,55 @@
+div#assets {
+    div.container {
+        background-image: url("../images/assets.jpg");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 730px;
+        padding-bottom: 50px;
+        div.assets {
+            float: right;
+            width: 485px;
+            margin-right: 20px;
+            padding-top: 35px;
+            dl {
+                background-repeat: no-repeat;
+                background-position: top center;
+                background-size: 70px;
+                width: 215px;
+                padding-top: 70px;
+                dt {
+                    font-size: 15px;
+                    font-weight: bold;
+                    text-align: center;
+                    line-height: 24px;
+                    color: #B88018;
+                    padding: 10px 0;
+                    svg {
+                        width: 75px;
+                    }
+                }
+                dd {
+                    font-size: 15px;
+                    line-height: 23px;
+                }
+                dt, dd {
+                    text-align: center;
+                }
+                &:nth-child(odd) {
+                    float: left;
+                    clear: left;
+                }
+                &:nth-child(even) {
+                    float: right;
+                }
+                &:first-child {
+                    margin-bottom: 50px;
+                }
+                @for $i from 1 through 4 {
+                    &:nth-child(#{$i}) {
+                        background-image: url("../images/icone" + #{$i} + ".svg");
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,11 +1,12 @@
-<div id="section-datasheet">
-    <div id="datasheet">
-        <div class="title">Ficha Técnica</div>
+{% from "macros.njk" import title %}
+<div class="section" id="datasheet">
+    <div class="container">
+        {{ title("Ficha Técnica") }}
         <div class="datasheet">
             <h2>Dados técnicos</h2>
             <ul>
                 {% for item in datasheet %}
-                <li>{{item}}</li>
+                <li><span>{{item}}</span></li>
                 {% endfor %}
             </ul>
         </div>

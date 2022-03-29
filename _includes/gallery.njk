@@ -1,6 +1,7 @@
-<div id="section-gallery">
-    <div id="gallery">
-        <div class="title">Escute a natureza e contemple a suas belezas!</div>
+{% from "macros.njk" import title %}
+<div class="section" id="gallery">
+    <div class="container">
+        {{ title("Condomínio Fazenda Barão do Império: Book Digital") }}
         <div class="gallery">
             <ul data-cycle-fx=scrollHorz data-cycle-timeout=2000 data-cycle-pager=".gallery-pager">
                 {% for file in galleryFiles() %}
@@ -8,6 +9,9 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="gallery-pager"></div>
+        <div class="gallery-pager">
+            <img src="/images/folha1.png" />
+            <img src="/images/folha2.png" />
+        </div>
     </div>
 </div>

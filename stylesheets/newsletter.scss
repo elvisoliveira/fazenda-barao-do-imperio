@@ -1,0 +1,50 @@
+div.newsletter {
+    form {
+        padding: 21px;
+        fieldset {
+            border: 0;
+            margin-top: 18px;
+            legend {
+                float: left;
+                width: 100%;
+                text-align: center;
+                color: #FFF;
+                font-size: 13px;
+                margin-bottom: 20px;
+                span {
+                    text-transform: uppercase;
+                }
+            }
+            dl {
+                float: left;
+                width: 100%;
+                margin-bottom: 12px;
+                dt {
+                    display: none;
+                }
+                dd {
+                    input {
+                        width: 100%;
+                        box-sizing: border-box;
+                        border-radius: 6px;
+                        text-indent: 22px;
+                        height: 32px;
+                        font-size: 12px;
+                        border: 2px solid #A7A7A7;
+                    }
+                }
+            }
+            > input {
+                margin-left: 73px;
+                margin-top: 15px;
+                width: 100px;
+                height: 35px;
+                font-size: 14px;
+                border-radius: 13px;
+                color: #FFF;
+                background-color: #F7A505;
+                border: 0;
+            }
+        }
+    }
+}

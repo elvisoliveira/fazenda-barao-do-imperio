@@ -1,10 +1,7 @@
-{% from "newsletter.njk" import newsletter %}
-<div id="section-banner">
-    <div id="banner">
-        <div class="title">Condomínio Fazenda Barão do Império</div>
-        <div class="subtitle">O primeiro condomínio com o conceito Agrogastronômico & Lazer do Brasil!</div>
-        <div class="newsletter">
-            {{ newsletter("Cadastre e saiba mais <span>Um dos nossos corretores...</span>") }}
-        </div>
+{% from "macros.njk" import newsletter %}
+<div class="section" id="banner">
+    <div class="container">
+        <div class="main-title"><span>Condomínio Fazenda Barão do Império</span><br />O primeiro condomínio com o conceito Agrogastronômico & Lazer do Brasil!</div>
+        <!-- {{ newsletter("<span>Cadastre-se e saiba mais</span><br />Um dos nossos corretores...") }} -->
     </div>
-</div
+</div>

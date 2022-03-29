@@ -1,0 +1,78 @@
+div#bottom {
+    background-color: #EDEFEE;
+    padding-bottom: 74px;
+    div.container {
+        min-height: auto;
+        padding: 50px 0;
+        div.logo {
+            float: left;
+            width: 320px;
+            svg {
+                float: left;
+                width: 100%;
+            }
+        }
+        div.newsletter {
+            float: right;
+            width: 830px;
+            form {
+                padding: 0;
+                fieldset {
+                    margin: 0;
+                    legend {
+                        font-size: 19px;
+                        color: #565656;
+                    }
+                    dl {
+                        float: left;
+                        width: 200px;
+                        margin: 0;
+                        dd {
+                            input {
+                                border: 0;
+                                background: #FFFFFF 0% 0% no-repeat padding-box;
+                                box-shadow: 0px 3px 6px #00000029;
+                                font-size: 17px;
+                                height: 55px;
+                                float: left;
+                                border-radius: 31px;
+                            }
+                        }
+                        &:nth-child(2) {
+                            width: 405px;
+                        }
+                        &:nth-child(3) {
+                            display: none;
+                        }
+                        &:nth-child(4) {
+                            width: 275px;
+                            margin-left: 18px;
+                        }
+                    }
+                    > input {
+                        margin: 0 0 0 12px;
+                        background-color: #FF0A07;
+                        font-size: 17px;
+                        height: 55px;
+                        border-radius: 31px;
+                    }
+                }
+            }
+        }
+        div.copyright {
+            float: left;
+            width: 100%;
+            text-align: center;
+            padding-top: 49px;
+            font-size: 13px;
+        }
+        div.addresses {
+            float: left;
+            width: 100%;
+            text-align: center;
+            padding-top: 29px;
+            font-size: 12px;
+            line-height: 23px;
+        }
+    }
+}

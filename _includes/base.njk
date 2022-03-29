@@ -1,7 +1,7 @@
 ---
 title: Barão do Império - VAZ
 ---
-{% from "newsletter.njk" import newsletter %}
+{% from "macros.njk" import newsletter %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" dir="ltr" lang="pt-br">
     <head>
@@ -16,33 +16,36 @@ title: Barão do Império - VAZ
         <title>{{ title }}</title>
     </head>
     <body>
-        <div id="section-header">
+        <div class="section" id="header">
             <div id="top-bar">
-                <div id="menu">
-                    <ul>
-                        <li><a href="#">Portal do Cliente</a></li>
-                        <li><a href="#">Portal do Corretor</a></li>
-                    </ul>
-                </div>
-                {% set search = "Digite seu e-mail" %}
-                <div id="search">
-                    <form action="#">
-                        <dl>
-                            <dt><label for="search">{{ search }}</label></dt>
-                            <dd><input type="text" name="search" placeholder="{{ search }}" /></dd>
-                        </dl>
-                        <input type="submit" value="Enviar" />
-                    </form>
-                </div>
-                <div id="social-network">
-                    <ul>
-                        {% for item in socialNetworks %}
-                            <li><a href="{{ item.link }}">{{ item.vendor }}</a></li>
-                        {% endfor %}
-                    </ul>
+                <div class="container">
+                    <div id="social-network">
+                        <ul>
+                            {% for item in socialNetworks %}
+                                {% set icon = "/icons/" + item.vendor + ".svg" %}
+                                <li><a href="{{ item.link }}">{{ icon | svgContents | safe }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% set search = "Digite seu e-mail" %}
+                    <div id="search">
+                        <form action="#">
+                            <dl>
+                                <dt><label for="search">{{ search }}</label></dt>
+                                <dd><input type="text" name="search" placeholder="{{ search }}" /></dd>
+                            </dl>
+                            <input type="submit" value="Enviar" />
+                        </form>
+                    </div>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="https://vazdesenvolvimento-portalcliente.sienge.com.br/PortalCliente/">Portal do Cliente</a></li>
+                            <li><a href="https://vazdesenvolvimento.facilitavendas.com/v2/login">Portal do Corretor</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div id="header">
+            <div class="container">
                 <div class="logo">
                     <a href="/">{{ '/icons/logo.svg' | svgContents | safe }}</a>
                 </div>
@@ -59,17 +62,17 @@ title: Barão do Império - VAZ
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="schedule-a-visit">
-                    <a href="#">Agende uma visita!</a>
-                </div>
                 <div class="contact-the-realtor">
                     <a href="#">Fale com um corretor</a>
+                </div>
+                <div class="schedule-a-visit">
+                    <a href="#">Agende uma visita!</a>
                 </div>
             </div>
         </div>
         {{ content | safe }}
-        <div id="section-bottom">
-            <div id="bottom">
+        <div class="section" id="bottom">
+            <div class="container">
                 <div class="logo">
                     {{ '/icons/logo.svg' | svgContents | safe }}
                 </div>
@@ -82,8 +85,8 @@ title: Barão do Império - VAZ
                 </div>
             </div>
         </div>
-        <div id="section-footer">
-            <div id="footer">
+        <div class="section" id="footer">
+            <div class="container">
                 {{ newsletter("Receba novidade do empreendimento:") }}
             </div>
         </div>

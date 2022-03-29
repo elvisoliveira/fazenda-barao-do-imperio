@@ -1,4 +1,51 @@
-* { margin: 0; padding: 0; }
-body {
-    background-color: orange;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+body {
+    background-color: #FFF;
+    > div.section {
+        float: left;
+        width: 100%;
+        div.container {
+            width: 1280px;
+            min-height: 500px;
+            margin: 0 auto;
+            position: relative;
+            float: left;
+            left: 50%;
+            margin-left: -640px;
+            div.title {
+                float: left;
+                width: 100%;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: -1px;
+                display: flex;
+                align-items:center;
+                justify-content: center;
+                padding: 70px 0;
+                svg {
+                    width: 175px;
+                    &:first-child {
+                        padding-right: 10px;
+                    }
+                    &:last-child {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Includes ********************************/
+@import "header";
+@import "footer";
+@import "banner";
+@import "assets";
+@import "bottom";
+@import "gallery";
+@import "datasheet";
+@import "newsletter";

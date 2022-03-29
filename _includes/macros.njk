@@ -1,0 +1,30 @@
+{% macro newsletter(text) %}
+<div class="newsletter">
+    <form action="#">
+        <fieldset>
+            <legend>{{ text | safe }}</legend>
+            <dl>
+                <dt><label for="name">Nome</label></dt>
+                <dd><input type="text" placeholder="Nome" name="name" /></dd>
+            </dl>
+            <dl>
+                <dt><label for="phone">Telefone</label></dt>
+                <dd><input type="text" placeholder="Telefone" name="phone" /></dd>
+            </dl>
+            <dl>
+                <dt><label for="email">E-mail</label></dt>
+                <dd><input type="text" placeholder="E-mail" name="email" /></dd>
+            </dl>
+            <input type="submit" value="Enviar" />
+        </fieldset>
+    </form>
+</div>
+{% endmacro %}
+
+{% macro title(text) %}
+<div class="title">
+    {{ '/icons/title-left.svg' | svgContents | safe }}
+    <span>{{ text | safe }}</span>
+    {{ '/icons/title-right.svg' | svgContents | safe }}
+</div>
+{% endmacro %}
