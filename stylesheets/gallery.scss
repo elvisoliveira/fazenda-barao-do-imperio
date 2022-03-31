@@ -1,6 +1,7 @@
 div#gallery {
+    z-index: 998;
     background-color: #EDEFEE;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     div.container {
         position: relative;
         div.gallery {
@@ -35,8 +36,18 @@ div#gallery {
             position: relative;
             float: left;
             width: 100%;
+            text-align: center;
+            padding-top: 20px;
+            span {
+                color: #CFCFCF;
+                margin-right: 5px;
+                &.cycle-pager-active {
+                    color: #005629;
+                }
+            }
             img {
                 position: absolute;
+                z-index: 999;
                 &:nth-child(1) {
                     width: 140px;
                     left: 70px;

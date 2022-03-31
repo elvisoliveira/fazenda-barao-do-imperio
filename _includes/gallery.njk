@@ -3,15 +3,15 @@
     <div class="container">
         {{ title("Condomínio Fazenda Barão do Império: Book Digital") }}
         <div class="gallery">
-            <ul data-cycle-fx=scrollHorz data-cycle-timeout=2000 data-cycle-pager=".gallery-pager">
+            <ul class="cycle-slideshow" data-cycle-slides="li" data-cycle-timeout="2000" data-cycle-pager=".gallery-pager">
                 {% for file in galleryFiles() %}
-                <li>{% galleryImage "./gallery/" + file, "", "(min-width: 30em) 50vw, 100vw" %}</li>
+                <li>{% galleryImage "./gallery/" + file, "" %}</li>
                 {% endfor %}
             </ul>
         </div>
         <div class="gallery-pager">
-            <img src="/images/folha1.png" />
-            <img src="/images/folha2.png" />
+            <img src="/images/leaf-left.png" />
+            <img src="/images/leaf-right.png" />
         </div>
     </div>
 </div>

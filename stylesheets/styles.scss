@@ -8,6 +8,7 @@ body {
     > div.section {
         float: left;
         width: 100%;
+        position: relative;
         div.container {
             width: 1280px;
             min-height: 500px;
@@ -47,5 +48,6 @@ body {
 @import "assets";
 @import "bottom";
 @import "gallery";
+@import "contact";
 @import "datasheet";
 @import "newsletter";

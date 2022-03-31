@@ -30,10 +30,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addNunjucksShortcode("galleryImage", function (src, alt, sizes) {
         let options = {
-            widths: [600],
+            widths: [1280],
             formats: ["avif", "jpeg"],
             urlPath: "/galery/",
-            outputDir: "./_site/galery/"
+            outputDir: "./_site/galery/",
+            sharpJpegOptions: {
+                quality: 80
+            }
         };
         Image(src, options);
         return Image.generateHTML(Image.statsSync(src, options), {
@@ -47,6 +50,7 @@ module.exports = function (eleventyConfig) {
         const fs = require("fs");
         return fs.readdirSync("gallery");
     });
+    eleventyConfig.addPlugin(require("eleventy-favicon"));
     eleventyConfig.addPlugin(require("eleventy-plugin-svg-contents"));
     eleventyConfig.addPlugin(require("eleventy-plugin-dart-sass"), sassOptions);
     eleventyConfig.addTransform("html", function (content, path) {

@@ -6,13 +6,17 @@ title: Barão do Império - VAZ
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" dir="ltr" lang="pt-br">
     <head>
         <!-- Meta-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0, user-scalable=no" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <!-- Scripts-->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB79CFj3c_-Y3_fe_OFtrloJF1r3vAYE-E"></script>
         <!-- Styles-->
         <link rel="stylesheet" href="stylesheets/styles.css?timestamp={{ timestamp }}" preload />
         <!-- Browser-->
+        {% favicon './favicon.svg' %}
+
         <title>{{ title }}</title>
     </head>
     <body>
@@ -90,5 +94,35 @@ title: Barão do Império - VAZ
                 {{ newsletter("Receba novidade do empreendimento:") }}
             </div>
         </div>
+        <script type="text/javascript">
+            $(function() {
+                var location = new google.maps.LatLng(-20.1363652, -40.4405283);
+                var streetmap = new google.maps.Map($("div.map-content li.streetmap")[0], {
+                    zoom: 16,
+                    center: location,
+                    disableDefaultUI: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                var sattelite = new google.maps.Map($("div.map-content li.sattelite")[0], {
+                    zoom: 16,
+                    center: location,
+                    disableDefaultUI: true,
+                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                });
+                $.each([streetmap, sattelite], function(i, val) {
+                    new google.maps.Marker({
+                        position: location,
+                        map: val,
+                        title: "{{ title }}"
+                    });
+                });
+                $("div.map-tab a").click(function(e) {
+                    e.preventDefault();
+                    $("li.active").removeClass("active");
+                    var tab = $(this).parents("li").attr("class");
+                    $("li." + tab).addClass("active");
+                });
+            });
+        </script>
     </body>
 </html>

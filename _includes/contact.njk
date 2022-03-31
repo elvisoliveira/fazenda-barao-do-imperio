@@ -1,22 +1,22 @@
 {% from "macros.njk" import title %}
 <div class="section" id="contact">
     <div class="container">
-        {{ title("Contato") }}
-        <div class="contact">
-            <div class="map">
-                <div class="map-tab">
-                    <ul>
-                        <li class="active">Localização</li>
-                        <li>Imagem aérea</li>
-                    </ul>
-                </div>
-                <div class="map-content">
-                    <ul>
-                        <li class="active"></li>
-                        <li></li>
-                    </ul>
-                </div>
+        <div class="map">
+            <div class="map-tab">
+                <ul>
+                    <li class="streetmap active"><a href="#">Localização</a></li>
+                    <li class="sattelite"><a href="#">Imagem aérea</a></li>
+                </ul>
             </div>
+            <div class="map-content">
+                <ul>
+                    <li class="streetmap active"></li>
+                    <li class="sattelite"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contact">
+            {{ title("Contato") }}
             <div class="info">
                 <div class="phone">27 4042-0809</div>
                 <div class="email">fazendabaraodoimperio@vazdesenvolvimento.com.br</div>
