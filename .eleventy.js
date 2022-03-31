@@ -33,8 +33,8 @@ module.exports = function (eleventyConfig) {
         let options = {
             widths: [1280],
             formats: ["avif", "jpeg"],
-            urlPath: "/galery/",
-            outputDir: "./_site/galery/",
+            urlPath: "/gallery/",
+            outputDir: "./_site/gallery/",
             sharpJpegOptions: {
                 quality: 80
             }
