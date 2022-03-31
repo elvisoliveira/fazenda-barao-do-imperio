@@ -8,6 +8,7 @@ const minifyOptions = {
     collapseWhitespace: true,
     decodeEntities: true,
     removeComments: true,
+    minifyJS: true
 };
 
 const beautifyOptions = {
