@@ -27,19 +27,20 @@ div#description {
         div.newsletter {
             background-color: #006B3F;
             border: 0;
-            top: 78px;
             width: 286px;
-            height: 317px;
+            height: 280px;
             border-radius: 10px;
             float: right;
+            margin-right: 100px;
         }
         div.description {
             float: left;
             box-sizing: border-box;
             padding-right: 100px;
-            width: calc(100% - 286px);
+            width: calc(100% - 386px);
+            padding-left: 100px;
             p {
-                font-size: 13px;
+                font-size: 16px;
                 margin-bottom: 10px;
             }
         }

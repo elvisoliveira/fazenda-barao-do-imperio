@@ -7,7 +7,7 @@
         "build": "ELEVENTY_MODE=production eleventy",
         "serve": "ELEVENTY_MODE=development eleventy --serve",
         "debug": "ELEVENTY_MODE=development && DEBUG=* eleventy --serve",
-        "deploy": "rm -rf _site && npm run build && gh-pages -d _site"
+        "deploy": "rm -rf ./_site/ && npm run build && echo 'fazendabaraodoimperio.com.br' > ./_site/CNAME && gh-pages -d ./_site/"
     },
     "keywords": [],
     "author": "",
