@@ -8,6 +8,7 @@ title: Barão do Império - VAZ
         <!-- Meta-->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0, user-scalable=no" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="facebook-domain-verification" content="ne6tpp0nh3kpsgkz1r5la2zic64elv" />
         <!-- Scripts-->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
@@ -27,7 +28,7 @@ title: Barão do Império - VAZ
                         <ul>
                             {% for item in socialNetworks %}
                                 {% set icon = "/icons/" + item.vendor + ".svg" %}
-                                <li><a href="{{ item.link }}">{{ icon | svgContents | safe }}</a></li>
+                                <li><a href="{{ item.link }}" target="_blank">{{ icon | svgContents | safe }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -54,15 +55,15 @@ title: Barão do Império - VAZ
                     <a href="/">{{ '/icons/logo.svg' | svgContents | safe }}</a>
                 </div>
                 {% set menu = [
-                    { slug: 'home', title: 'Home' },
-                    { slug: 'about', title: 'Sobre a Vaz' },
-                    { slug: 'datasheet', title: 'Ficha Técnica' },
-                    { slug: 'contact', title: 'Contato' }
+                    { slug: '#', title: 'Home' },
+                    { slug: 'https://vazdesenvolvimento.com.br/sobre-nos/', title: 'Sobre a Vaz' },
+                    { slug: '#datasheet', title: 'Ficha Técnica' },
+                    { slug: '#contact', title: 'Contato' }
                 ] %}
                 <div class="menu">
                     <ul>
                         {% for item in menu %}
-                            <li><a href="#section-{{ item.slug }}">{{ item.title  }}</a></li>
+                            <li><a href="{{ item.slug }}" {% if '#' not in item.slug %}target="_blank"{% endif %}>{{ item.title  }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -107,7 +108,7 @@ title: Barão do Império - VAZ
                     zoom: 16,
                     center: location,
                     disableDefaultUI: true,
-                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                    mapTypeId: google.maps.MapTypeId.SATELLITE
                 });
                 $.each([streetmap, sattelite], function(i, val) {
                     new google.maps.Marker({

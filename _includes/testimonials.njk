@@ -1,17 +1,11 @@
 {% from "macros.njk" import title %}
 <div class="section" id="testimonials">
     <div class="container">
-        {{ title("Clientes que nos garantem") }}
-        <div class="testimonials">
-            <ul>
-                {% for testimonial in testimonials %}
-                <li>
-                    <div class="picture"><img src="{{ testimonial.picture }}" /></div>
-                    <div class="description">{{ testimonial.description }}</div>
-                    <div class="author">{{ testimonial.author }} <span>{{ testimonial.position }}</span></div>
-                </li>
-                {% endfor %}
-            </ul>
+        {{ title("Quem garante o empreendimento") }}
+        <div class="single">
+            <div class="picture"><img src="./images/douglas-vaz.jpg" /></div>
+            <div class="description">diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nos trud exerci tation ullamcorper sus cipi t lobortis nis ut aliquip ex ea commodo consequ at. Duis autem vel eum iriure dolor</div>
+            <div class="author">Douglas Vaz <br /><span>CEO</span></div>
         </div>
     </div>
 </div>

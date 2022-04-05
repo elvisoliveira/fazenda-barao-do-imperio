@@ -1,0 +1,25 @@
+div#testimonials {
+    div.single {
+        @include centralize(600px);
+        background-color: #EDEFEE;
+        border-radius: 10px;
+        float: left;
+        padding: 50px;
+        box-sizing: border-box;
+        div {
+            text-align: center;
+            margin-bottom: 25px;
+            &:last-child {
+                margin: 0;
+            }
+            &.picture {}
+            &.description {}
+            &.author {
+                font-weight: bold;
+                span {
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
