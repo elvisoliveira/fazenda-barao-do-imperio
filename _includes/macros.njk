@@ -28,3 +28,22 @@
     {{ '/icons/title-right.svg' | svgContents | safe }}
 </div>
 {% endmacro %}
+
+{% macro resource(title, list) %}
+<dl>
+    <dt>{{ title | safe }}</dt>
+    <dd>
+        <ul>
+            {% for item in list %}
+            <li><span>{{item}}</span></li>
+            {% endfor %}
+        </ul>
+    </dd>
+</dl>
+{% endmacro %}
+
+{% macro gallery(path, size) %}
+    {% for file in list(path) %}
+    <li>{% image "./" + path + "/" + file, "", size, path %}</li>
+    {% endfor %}
+{% endmacro %}

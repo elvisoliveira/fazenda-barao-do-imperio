@@ -1,13 +1,39 @@
-{% from "macros.njk" import title %}
+{% from "macros.njk" import title, resource, gallery %}
 <div class="section" id="datasheet">
     <div class="container">
         {{ title("Ficha Técnica") }}
-        <div class="datasheet">
-            <ul>
-                {% for item in datasheet %}
-                <li><span>{{item}}</span></li>
-                {% endfor %}
-            </ul>
+        <div class="cycle-slideshow"
+            data-cycle-slides="div"
+            data-cycle-timeout="0"
+            data-cycle-pager=".datasheet-pager .bullets"
+            data-cycle-next=".fa-arrow-right"
+            data-cycle-prev=".fa-arrow-left">
+            <div class="datasheet">
+                <ul>
+                    {% for item in datasheet %}
+                    <li><span>{{item}}</span></li>
+                    {% endfor %}
+                </ul>
+                {% image "./pictures/datasheet/map.jpg", "", [600], "pictures/datasheet" %}
+            </div>
+            <div class="natural-assets">
+                {{ resource("Nascentes, lagos e áreas nativos", naturalAssets) }}
+                <ul class="gallery">
+                    {{ gallery("pictures/natural-assets", [250]) }}
+                </ul>
+            </div>
+            <div class="resources">
+                {{ resource("Itens de lazer", leisure) }}
+                {{ resource("Imperial club", club) }}
+                {{ resource("Fazenda", farm) }}
+                {{ resource("Cozinha da baronesa", food) }}
+                {{ resource("Segurança", security) }}
+            </div>
+        </div>
+        <div class="datasheet-pager">
+            <i class="fas fa-arrow-left fa-2x"></i>
+            <div class="bullets"></div>
+            <i class="fas fa-arrow-right fa-2x"></i>
         </div>
     </div>
 </div>

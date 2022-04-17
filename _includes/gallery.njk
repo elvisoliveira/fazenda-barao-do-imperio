@@ -1,17 +1,22 @@
-{% from "macros.njk" import title %}
+{% from "macros.njk" import title, gallery %}
 <div class="section" id="gallery">
     <div class="container">
         {{ title("Condomínio Fazenda Barão do Império: Book Digital") }}
         <div class="gallery">
-            <ul class="cycle-slideshow" data-cycle-slides="li" data-cycle-timeout="2000" data-cycle-pager=".gallery-pager">
-                {% for file in galleryFiles() %}
-                <li>{% galleryImage "./gallery/" + file, "" %}</li>
-                {% endfor %}
+            <ul class="cycle-slideshow"
+            data-cycle-slides="li"
+            data-cycle-timeout="0"
+            data-cycle-pager=".gallery-pager"
+            data-cycle-next=".fa-angle-right"
+            data-cycle-prev=".fa-angle-left">
+                {{ gallery("gallery", [1280]) }}
             </ul>
+            <i class="fa fa-angle-left"></i>
+            <i class="fa fa-angle-right"></i>
         </div>
         <div class="gallery-pager">
-            <img src="/images/leaf-left.png" />
-            <img src="/images/leaf-right.png" />
+            <img class="leaf-left" src="/images/leaf-left.png" />
+            <img class="leaf-right" src="/images/leaf-right.png" />
         </div>
     </div>
 </div>

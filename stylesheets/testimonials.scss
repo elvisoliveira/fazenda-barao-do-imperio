@@ -1,6 +1,6 @@
 div#testimonials {
     div.single {
-        @include centralize(600px);
+        @include centralize(800px);
         background-color: #EDEFEE;
         border-radius: 10px;
         float: left;
@@ -12,8 +12,12 @@ div#testimonials {
             &:last-child {
                 margin: 0;
             }
-            &.picture {}
-            &.description {}
+            &.description p {
+                margin-bottom: 20px;
+                &:last-child {
+                    margin: 0;
+                }
+            }
             &.author {
                 font-weight: bold;
                 span {

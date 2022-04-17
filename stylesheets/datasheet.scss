@@ -2,24 +2,106 @@ div#datasheet {
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.6);
     padding-bottom: 50px;
     div.container {
-        background-image: url("../images/no-picture.svg");
-        background-size: 600px;
-        background-repeat: no-repeat;
-        background-position: 550px 213px;
-        div.datasheet {
-            width: 400px;
+        div.cycle-slideshow {
+            width: 100%;
+            height: 600px;
             float: left;
-            ul {
-                padding-left: 21px;
-                li {
-                    color: #DC9918;
-                    font-size: 25px;
-                    list-style-type: square;
-                    list-style-position: outside;
-                    margin-bottom: 25px;
-                    span {
-                        color: #565656;
-                        font-size: 15px;
+            > div {
+                width: 100%;
+                float: left;
+                dl {
+                    float: left;
+                    dt {
+                        font-size: 20px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                    }
+                }
+                ul {
+                    padding-left: 21px;
+                    li {
+                        color: #DC9918;
+                        font-size: 25px;
+                        list-style-type: square;
+                        list-style-position: outside;
+                        span {
+                            color: #565656;
+                            font-size: 15px;
+                        }
+                    }
+                }
+                &.datasheet {
+                    ul {
+                        width: 400px;
+                        float: left;
+                    }
+                    picture {
+                        float: right;
+                        img {
+                            float: left;
+                            width: 100%;
+                        }
+                    }
+                }
+                &.natural-assets {
+                    ul.gallery {
+                        float: right;
+                        width: 515px;
+                        padding: 0;
+                        li {
+                            float: left;
+                            list-style: none;
+                            height: 186px;
+                            overflow: hidden;
+                            picture {
+                                float: left;
+                                img {
+                                    float: left;
+                                }
+                            }
+                            &:nth-child(1) {
+                                margin: 0 15px 15px 0;
+                            }
+                            &:nth-child(2) {
+                                margin-bottom: 15px;
+                            }
+                            &:nth-child(3) {
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                }
+                &.resources {
+                    dl {
+                        width: 244px;
+                        margin-right: 15px;
+                        dt {
+                            text-align: center;
+                        }
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        div.datasheet-pager {
+            float: left;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            i {
+                color: #006B3F;
+            }
+            div.bullets {
+                margin: 0 10px;
+                line-height: 32px;
+                font-size: 21px;
+                span {
+                    color: #CFCFCF;
+                    &.cycle-pager-active {
+                        color: #006B3F;
                     }
                 }
             }

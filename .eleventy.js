@@ -29,12 +29,12 @@ const sassOptions = {
 module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData("timestamp", Date.now());
     eleventyConfig.addPassthroughCopy("images");
-    eleventyConfig.addNunjucksShortcode("galleryImage", function (src, alt, sizes) {
+    eleventyConfig.addNunjucksShortcode("image", function (src, alt, widths, path) {
         let options = {
-            widths: [1280],
+            widths: widths,
             formats: ["avif", "jpeg"],
-            urlPath: "/gallery/",
-            outputDir: "./_site/gallery/",
+            urlPath: `/${path}/`,
+            outputDir: `./_site/${path}/`,
             sharpJpegOptions: {
                 quality: 80
             }
@@ -42,14 +42,14 @@ module.exports = function (eleventyConfig) {
         Image(src, options);
         return Image.generateHTML(Image.statsSync(src, options), {
             alt,
-            sizes,
+            undefined,
             loading: "lazy",
             decoding: "async",
         });
     });
-    eleventyConfig.addNunjucksGlobal("galleryFiles", function () {
+    eleventyConfig.addNunjucksGlobal("list", function (src) {
         const fs = require("fs");
-        return fs.readdirSync("gallery");
+        return fs.readdirSync(src);
     });
     eleventyConfig.addPlugin(require("eleventy-favicon"));
     eleventyConfig.addPlugin(require("eleventy-plugin-svg-contents"));
