@@ -1,0 +1,20 @@
+[
+    {
+        "province": "ESPIRITO SANTO",
+        "address": "Rua Alberto de Oliveira Santos, 40 Ed. Pres. Kennedy, sl 21 a 23, Centro, Vitória",
+        "postalcode": "29010-250",
+        "phone": "(27) 2142-8886"
+    },
+    {
+        "province": "MATO GROSSO",
+        "address": "Rod MT, quadra 21, lote 1, sala 5, Novo Diamantino, Diamantino",
+        "postalcode": "78402-000",
+        "phone": "(65) 3337-1058"
+    },
+    {
+        "province": "RONDÔNIA",
+        "address": "Rua Gonçalves dias, 140 – Centro, Vilhena",
+        "postalcode": "76980-006",
+        "phone": "(69) 3321-4343"
+    }
+]

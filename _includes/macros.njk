@@ -3,18 +3,17 @@
     <form action="#" id="barao-do-imperio">
         <fieldset>
             <legend>{{ text | safe }}</legend>
+            {% set newsletter = [
+                { name: 'name', label: 'Nome' },
+                { name: 'phone', label: 'Telefone' },
+                { name: 'email', label: 'E-mail' }
+            ] %}
+            {% for item in newsletter %}
             <dl>
-                <dt><label for="name">Nome</label></dt>
-                <dd><input type="text" placeholder="Nome" name="name" /></dd>
+                <dt><label for="{{ item.name }}">{{ item.label }}</label></dt>
+                <dd><input type="text" placeholder="{{ item.label }}" name="{{ item.name }}" /></dd>
             </dl>
-            <dl>
-                <dt><label for="phone">Telefone</label></dt>
-                <dd><input type="text" placeholder="Telefone" name="phone" /></dd>
-            </dl>
-            <dl>
-                <dt><label for="email">E-mail</label></dt>
-                <dd><input type="text" placeholder="E-mail" name="email" /></dd>
-            </dl>
+            {% endfor %}
             <input type="submit" value="Enviar" />
         </fieldset>
     </form>
