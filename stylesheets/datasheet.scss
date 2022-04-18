@@ -1,59 +1,59 @@
 div#datasheet {
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.6);
     padding-bottom: 50px;
+
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.6);
     div.container {
         div.cycle-slideshow {
-            width: 100%;
-            float: left;
+            @extend %clear;
+
             overflow: hidden;
             > div {
-                width: 100%;
-                float: left;
+                @extend %clear;
                 dl {
                     float: left;
                     dt {
+                        margin-bottom: 20px;
+
                         font-size: 20px;
                         font-weight: bold;
                         text-transform: uppercase;
-                        margin-bottom: 20px;
                     }
                 }
                 ul {
                     padding-left: 21px;
                     li {
-                        color: #DC9918;
+                        color: $yellow;
                         font-size: 25px;
-                        list-style-type: square;
                         list-style-position: outside;
+                        list-style-type: square;
                         span {
-                            color: #565656;
+                            color: $grey;
                             font-size: 15px;
                         }
                     }
                 }
                 &.datasheet {
                     ul {
-                        width: 600px;
-                        float: left;
+                        @include left(600px);
                     }
                     picture {
                         float: right;
                         img {
-                            float: left;
-                            width: 100%;
+                            @extend %clear;
                         }
                     }
                 }
                 &.natural-assets {
                     ul.gallery {
-                        float: right;
-                        width: 515px;
+                        @include right(515px);
+
                         padding: 0;
                         li {
                             float: left;
-                            list-style: none;
                             height: 186px;
                             overflow: hidden;
+
+                            list-style: none;
                             picture {
                                 float: left;
                                 img {
@@ -79,7 +79,8 @@ div#datasheet {
                         dt {
                             text-align: center;
                         }
-                        &:nth-child(3), &:nth-child(5) {
+                        &:nth-child(3),
+                        &:nth-child(5) {
                             margin-right: 0;
                         }
                     }
@@ -87,23 +88,25 @@ div#datasheet {
             }
         }
         div.datasheet-pager {
-            float: left;
-            width: 100%;
-            display: flex;
+            @extend %clear;
+
             justify-content: center;
+
+            display: flex;
             margin-top: 50px;
             i.fa {
-                color: #006B3F;
+                color: $green;
                 font-size: 30px;
             }
             div.bullets {
                 margin: 0 10px;
-                line-height: 27px;
+
                 font-size: 21px;
+                line-height: 27px;
                 span {
-                    color: #CFCFCF;
+                    color: $lightgrey;
                     &.cycle-pager-active {
-                        color: #006B3F;
+                        color: $green;
                     }
                 }
             }

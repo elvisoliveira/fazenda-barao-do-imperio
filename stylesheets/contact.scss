@@ -2,25 +2,27 @@ div#contact {
     padding: 100px 0;
     div.container {
         div.map {
-            float: left;
-            width: 50%;
+            @include left(50%);
             div.map-tab {
                 ul {
                     li {
-                        float: left;
-                        width: 50%;
+                        @include left(50%);
+
                         list-style: none;
                         a {
-                            color: #006B3F;
-                            background-color: #EDEFEE;
-                            font-size: 17px;
                             padding: 10px 15px;
+
+                            color: $green;
+                            font-size: 17px;
                             text-decoration: none;
+
+                            background-color: $lightgrey;
                         }
                         &.active {
                             a {
-                                color: #EDEFEE;
-                                background-color: #006B3F;
+                                color: $lightgrey;
+
+                                background-color: $green;
                             }
                         }
                         &:first-child a {
@@ -35,15 +37,16 @@ div#contact {
                 }
             }
             div.map-content {
-                float: left;
-                width: 100%;
+                @extend %clear;
+
                 height: 100px;
                 ul {
                     li {
+                        @extend %clear;
+
                         display: none;
-                        float: left;
-                        width: 100%;
                         height: 400px;
+
                         list-style: none;
                         &.active {
                             display: block;
@@ -53,32 +56,31 @@ div#contact {
             }
         }
         div.contact {
-            float: right;
-            width: 40%;
+            @include right(45%);
+
             padding-top: 42px;
             div.title {
                 padding: 0;
             }
             div.info {
-                padding-top: 150px;
-                font-size: 13px;
                 height: 25px;
+                padding-top: 150px;
+
+                font-size: 13px;
                 line-height: 25px;
                 div {
                     text-indent: 65px;
                     &.phone {
                         margin-bottom: 15px;
-                        background-image: url("../images/phone.svg"), url("../images/whatsapp.svg");
-                        background-repeat: no-repeat;
-                        background-position: 30px 0, 0 0;
+
                         font-size: 27px;
+
+                        background: url('../images/phone.svg') no-repeat, url('../images/whatsapp.svg') no-repeat 30px 0;
                     }
                     &.email {
-                        background-image: url("../images/email.svg");
-                        background-repeat: no-repeat;
-                        background-position: 30px center;
-                        background-size: 25px;
                         font-size: 17px;
+
+                        background: url('../images/email.svg') no-repeat 30px center/25px;
                     }
                 }
             }

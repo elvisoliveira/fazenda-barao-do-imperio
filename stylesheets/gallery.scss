@@ -1,32 +1,37 @@
 div#gallery {
     z-index: 998;
-    background-color: #EDEFEE;
+
     padding-bottom: 30px;
+
+    background-color: $lightgrey;
     div.container {
         position: relative;
         div.gallery {
-            float: left;
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            height: 639px;
+            @extend %clear;
+
             position: relative;
+
+            height: 639px;
+            overflow: hidden;
+
+            border-radius: 15px;
             ul {
-                float: left;
-                width: 100%;
+                @extend %clear;
+
                 position: relative;
                 li {
+                    position: absolute;
                     top: 0;
                     left: 0;
+
                     width: 100%;
-                    position: absolute;
+
                     list-style: none;
                     picture {
-                        float: left;
-                        width: 100%;
+                        @extend %clear;
                         img {
-                            float: left;
-                            width: 100%;
+                            @extend %clear;
+
                             height: auto;
                         }
                     }
@@ -34,12 +39,15 @@ div#gallery {
             }
             i {
                 position: absolute;
-                z-index: 999;
-                font-size: 200px;
-                color: #FFF;
-                opacity: 0.3;
                 top: 50%;
+                z-index: 999;
+
                 margin-top: -100px;
+
+                color: $lightgrey;
+                font-size: 200px;
+
+                opacity: .3;
                 &.fa-angle-left {
                     left: 30px;
                 }
@@ -49,30 +57,35 @@ div#gallery {
             }
         }
         div.gallery-pager {
+            @extend %clear;
+
             position: relative;
-            float: left;
-            width: 100%;
-            text-align: center;
+
             padding-top: 20px;
+
+            text-align: center;
             span {
-                color: #CFCFCF;
                 margin-right: 5px;
+
+                color: $lightgrey;
                 &.cycle-pager-active {
-                    color: #005629;
+                    color: $green;
                 }
             }
             img {
                 position: absolute;
                 z-index: 999;
                 &.leaf-left {
-                    width: 140px;
-                    left: 70px;
                     bottom: -45px;
+                    left: 70px;
+
+                    width: 140px;
                 }
                 &.leaf-right {
-                    width: 260px;
                     right: 0;
                     bottom: -90px;
+
+                    width: 260px;
                 }
             }
         }

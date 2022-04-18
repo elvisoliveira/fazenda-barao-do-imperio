@@ -1,17 +1,20 @@
 div#header {
     height: 110px;
     div#top-bar {
-        float: left;
-        height: 37px;
+        @extend %clear;
+
         position: relative;
         z-index: 999;
-        width: 100%;
-        background-color: #00341C;
+
+        height: 37px;
+
+        background-color: $darkgreen;
         div.container {
-            display: flex;
             align-items: center;
-            min-height: 37px;
             flex-direction: row-reverse;
+
+            display: flex;
+            min-height: 37px;
             div {
                 float: right;
             }
@@ -19,36 +22,14 @@ div#header {
                 ul {
                     li {
                         float: left;
-                        list-style: none;
                         margin-right: 26px;
+
                         font-size: 12px;
+                        list-style: none;
                         a {
-                            color: #FFF;
+                            color: $lightgrey;
                             text-decoration: none;
                         }
-                    }
-                }
-            }
-            div#search {
-                display: none;
-                form {
-                    dl {
-                        float: left;
-                        dt {
-                            float: left;
-                            label {
-
-                            }
-                        }
-                        dd {
-                            float: left;
-                            input {
-
-                            }
-                        }
-                    }
-                    > input {
-
                     }
                 }
             }
@@ -56,17 +37,18 @@ div#header {
                 ul {
                     li {
                         float: left;
-                        list-style: none;
                         margin-left: 8px;
+
+                        list-style: none;
                         &:first-child {
                             margin: 0;
                         }
                         a {
                             float: left;
                             svg {
-                                float: left;
-                                width: 20px;
-                                fill: #FFF;
+                                @include left(20px);
+
+                                fill: $lightgrey;
                             }
                         }
                     }
@@ -91,10 +73,11 @@ div#header {
             ul {
                 li {
                     float: left;
-                    list-style: none;
                     margin-right: 45px;
+
+                    list-style: none;
                     a {
-                        color: #000;
+                        color: $black;
                         font-size: 15px;
                         text-decoration: none;
                     }
@@ -102,51 +85,57 @@ div#header {
             }
         }
         div.schedule-a-visit {
-            float: right;
+            @include right(196px);
+
             height: 73px;
-            width: 196px;
             margin-right: 56px;
             a {
-                float: left;
-                width: 100%;
-                color: #FFF;
-                text-decoration: none;
-                text-align: center;
-                margin-top: 14px;
+                @extend %clear;
+
                 height: 44px;
-                border-radius: 19px;
-                line-height: 40px;
+                margin-top: 14px;
+
+                color: $lightgrey;
                 font-size: 16px;
-                background: transparent linear-gradient(204deg, var(--unnamed-color-006b3f) 0%, #008B52 100%) 0% 0% no-repeat padding-box;
-                background: transparent linear-gradient(204deg, #006B3F 0%, #008B52 100%) 0% 0% no-repeat padding-box;
-                box-shadow: 0px 7px 6px #00000029;
+                line-height: 40px;
+                text-align: center;
+                text-decoration: none;
+
+                background: transparent linear-gradient(204deg, $darkgreen 0%, $green 100%) 0 0 no-repeat padding-box;
+                box-shadow: 0 7px 6px #{$black}#{$thirty};
+                border-radius: 19px;
             }
             form {
+                @include left(400px);
+
                 position: relative;
-                z-index: 999;
-                background-color: #006b3f;
                 top: 75px;
-                width: 400px;
-                margin-left: -115px;
-                padding: 15px;
-                float: left;
+                z-index: 999;
+
                 display: none;
+                padding: 15px;
+                margin-left: -115px;
+
+                background-color: $green;
                 fieldset {
-                    border: 0;
-                    background-color: #FFF;
-                    float: left;
-                    width: 100%;
-                    border-radius: 5px;
+                    @extend %clear;
+
                     padding-bottom: 15px;
+
+                    background-color: $white;
+                    border: 0;
+                    border-radius: 5px;
                     > legend {
-                        float: left;
-                        width: 100%;
-                        text-align: center;
+                        @extend %clear;
+
                         padding-top: 15px;
+
                         font-size: 17px;
+                        text-align: center;
                         p {
-                            display: flex;
                             justify-content: center;
+
+                            display: flex;
                             margin-top: 10px;
                             svg {
                                 width: calc(50% - 65px);
@@ -154,57 +143,63 @@ div#header {
                         }
                     }
                     > dl {
+                        @include left(calc(100% - 50px));
+
                         margin-top: 15px;
-                        float: left;
-                        width: calc(100% - 50px);
                         margin-left: 25px;
                         dt {
                             display: none;
                         }
                         dd {
                             input {
-                                width: 100%;
                                 box-sizing: border-box;
-                                text-indent: 22px;
+                                width: 100%;
                                 height: 32px;
+
                                 font-size: 12px;
+                                text-indent: 22px;
+
                                 border: 1px solid #A7A7A7;
                             }
                         }
                     }
                     > input {
-                        float: left;
-                        color: #FFF;
-                        text-decoration: none;
-                        text-align: center;
-                        margin-top: 20px;
+                        @include left(200px);
+
+                        position: relative;
+                        left: 50%;
+
                         height: 44px;
+                        margin-top: 20px;
+                        margin-left: -100px;
+
+                        color: $lightgrey;
+                        font-size: 16px;
+                        line-height: 40px;
+                        text-align: center;
+                        text-decoration: none;
+
+                        background: transparent linear-gradient(204deg, $darkgreen 0%, $green 100%) 0 0 no-repeat padding-box;
+                        box-shadow: 0 7px 6px #{$black}#{$thirty};
                         border: 0;
                         border-radius: 19px;
-                        line-height: 40px;
-                        font-size: 16px;
-                        background: transparent linear-gradient(204deg, var(--unnamed-color-006b3f) 0%, #008B52 100%) 0% 0% no-repeat padding-box;
-                        background: transparent linear-gradient(204deg, #006B3F 0%, #008B52 100%) 0% 0% no-repeat padding-box;
-                        box-shadow: 0px 7px 6px #00000029;
-                        width: 200px;
-                        left: 50%;
-                        position: relative;
-                        margin-left: -100px;
                     }
                 }
             }
         }
         div.contact-the-realtor {
-            float: right;
-            width: 244px;
+            @include right(244px);
+
             height: 73px;
+
             line-height: 71px;
-            background-color: #F0A20A;
             text-align: center;
+
+            background-color: $yellow;
             a {
+                color: $white;
                 font-size: 15px;
                 text-decoration: none;
-                color: #000;
             }
         }
     }

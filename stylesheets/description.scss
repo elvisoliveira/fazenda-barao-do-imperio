@@ -1,47 +1,54 @@
 div#description {
     padding-top: 25px;
-    background-color: #EDEFEE;
+
+    background-color: $lightgrey;
     div.container {
         div.label {
             @include centralize(150px);
+
             display: table;
-            font-size: 12px;
-            background-color: #B88018;
-            border-radius: 10px;
-            color: #FFF;
-            line-height: 11px;
             padding: 5px 0;
+
+            color: $lightgrey;
+            font-size: 12px;
+            line-height: 11px;
             text-align: center;
+
+            background-color: $yellow;
+            border-radius: 10px;
         }
         div.condo-name {
             width: 100%;
-            color: #585858;
             padding: 20px 0 50px;
-            text-align: center;
+
+            color: $grey;
             font-size: 21px;
+            text-align: center;
             span {
-                text-transform: uppercase;
                 font-size: 35px;
+                text-transform: uppercase;
             }
         }
         div.newsletter {
-            background-color: #006B3F;
-            border: 0;
-            width: 286px;
+            @include right(286px);
+
             height: 280px;
-            border-radius: 10px;
-            float: right;
             margin-right: 100px;
+
+            background-color: $darkgreen;
+            border: 0;
+            border-radius: 10px;
         }
         div.description {
-            float: left;
+            @include left(calc(100% - 386px));
+
             box-sizing: border-box;
             padding-right: 100px;
-            width: calc(100% - 386px);
             padding-left: 100px;
             p {
-                font-size: 16px;
                 margin-bottom: 10px;
+
+                font-size: 16px;
             }
         }
     }

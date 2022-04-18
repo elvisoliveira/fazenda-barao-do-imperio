@@ -1,14 +1,17 @@
 div#testimonials {
     div.single {
         @include centralize(800px);
-        background-color: #EDEFEE;
-        border-radius: 10px;
+
+        box-sizing: border-box;
         float: left;
         padding: 50px;
-        box-sizing: border-box;
+
+        background-color: $lightgrey;
+        border-radius: 10px;
         div {
-            text-align: center;
             margin-bottom: 25px;
+
+            text-align: center;
             &:last-child {
                 margin: 0;
             }

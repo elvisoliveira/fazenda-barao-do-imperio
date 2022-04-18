@@ -1,65 +1,103 @@
-@use "sass:math";
+@use 'sass:math';
 
+/* Base Colors *******************************/
+$white: #FFFFFF;
+$green: #006B3F;
+$darkgreen: #143524;
+$yellow: #B88018;
+$lightgrey: #EDEFEE;
+$grey: #585858;
+$red: #FF0A07;
+$black: #000000;
+
+/* Transparency *******************************/
+$hundred: 'FF';
+$ninety: 'E6';
+$eighty: 'CC';
+$seventy: 'B3';
+$sixty: '99';
+$fifty: '80';
+$forty: '66';
+$thirty: '4D';
+$twenty: '33';
+$ten: '1A';
+
+
+/* Assets ************************************/
+%clear {
+    float: left;
+    width: 100%;
+}
+
+/* Mixins ************************************/
+@mixin centralize($width) {
+    position: relative;
+    left: 50%;
+
+    width: $width;
+    margin-left: -(math.div($width, 2));
+}
+@mixin left($width) {
+    float: left;
+    width: $width;
+}
+@mixin right($width) {
+    float: right;
+    width: $width;
+}
+
+/* Base Settings *****************************/
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
+
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body {
-    background-color: #FFF;
-    > div.section {
-        float: left;
-        width: 100%;
+div.section {
+    @extend %clear;
+
+    position: relative;
+    div.container {
+        @include centralize(1280px);
+
         position: relative;
-        div.container {
-            width: 1280px;
-            min-height: 500px;
-            margin: 0 auto;
-            position: relative;
-            float: left;
-            left: 50%;
-            margin-left: -640px;
-            div.title {
-                float: left;
-                width: 100%;
-                font-size: 18px;
-                font-weight: bold;
-                letter-spacing: -1px;
-                display: flex;
-                align-items:center;
-                justify-content: center;
-                padding: 70px 0;
-                svg {
-                    width: 175px;
-                    &:first-child {
-                        padding-right: 10px;
-                    }
-                    &:last-child {
-                        padding-left: 10px;
-                    }
+
+        float: left;
+        min-height: 500px;
+        div.title {
+            @extend %clear;
+
+            align-items: center;
+            justify-content: center;
+
+            display: flex;
+            padding: 70px 0;
+
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            svg {
+                width: 175px;
+                &:first-child {
+                    padding-right: 10px;
+                }
+                &:last-child {
+                    padding-left: 10px;
                 }
             }
         }
     }
 }
 
-/* Mixins ************************************/
-@mixin centralize($width) {
-    left: 50%;
-    width: $width;
-    margin-left: -(math.div($width, 2));
-    position: relative;
-}
-
 /* Includes ********************************/
-@import "header";
-@import "footer";
-@import "banner";
-@import "assets";
-@import "bottom";
-@import "gallery";
-@import "contact";
-@import "datasheet";
-@import "newsletter";
-@import "description.scss";
-@import "testimonials.scss";
+@import 'header';
+@import 'footer';
+@import 'banner';
+@import 'assets';
+@import 'bottom';
+@import 'gallery';
+@import 'contact';
+@import 'datasheet';
+@import 'newsletter';
+@import 'description.scss';
+@import 'testimonials.scss';

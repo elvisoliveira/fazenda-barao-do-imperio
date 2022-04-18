@@ -1,17 +1,20 @@
 div#footer {
-    height: 53px;
-    bottom: 0;
     position: fixed;
-    background-color: #006B3F;
-    padding: 0;
+    bottom: 0;
     z-index: 999;
+
+    height: 53px;
+    padding: 0;
+
+    background-color: $green;
     div.container {
         form {
             fieldset {
-                margin-top: 0;
-                display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                display: flex;
+                margin-top: 0;
                 legend {
                     width: unset;
                     margin: 0;
@@ -19,9 +22,6 @@ div#footer {
                 dl {
                     width: 265px;
                     margin: 0;
-                    dt {
-                        label {}
-                    }
                     dd {
                         input {
                             margin: 0;
@@ -29,9 +29,10 @@ div#footer {
                     }
                 }
                 > input {
-                    margin: 0;
-                    background-color: #1D3723;
                     height: 32px;
+                    margin: 0;
+
+                    background-color: $darkgreen;
                     border-radius: 6px;
                 }
             }

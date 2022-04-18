@@ -1,40 +1,44 @@
 div#bottom {
-    background-color: #EDEFEE;
     padding-bottom: 53px;
+
+    background-color: $lightgrey;
     div.container {
         min-height: auto;
         padding: 50px 0;
         div.logo {
-            float: left;
-            width: 320px;
+            @include left(320px);
             svg {
-                float: left;
-                width: 100%;
+                @extend %clear;
             }
         }
         div.newsletter {
-            float: right;
-            width: 830px;
+            @include right(830px);
             form {
                 padding: 0;
                 fieldset {
                     margin: 0;
                     legend {
+                        color: $grey;
                         font-size: 19px;
-                        color: #565656;
                     }
                     dl {
-                        float: left;
-                        width: 200px;
+                        @include left(200px);
+
                         margin: 0;
                         dd {
                             input {
-                                border: 0;
-                                background: #FFFFFF 0% 0% no-repeat padding-box;
-                                box-shadow: 0px 3px 6px #00000029;
-                                font-size: 17px;
-                                height: 55px;
                                 float: left;
+                                height: 55px;
+
+                                font-size: 17px;
+
+                                background-clip: padding-box;
+                                background-repeat: no-repeat;
+                                background-position-x: 0;
+                                background-position-y: 0;
+                                background-origin: padding-box;
+                                box-shadow: 0 3px 6px #{$black}#{$thirty};
+                                border: 0;
                                 border-radius: 31px;
                             }
                         }
@@ -50,29 +54,31 @@ div#bottom {
                         }
                     }
                     > input {
-                        margin: 0 0 0 12px;
-                        background-color: #FF0A07;
-                        font-size: 17px;
                         height: 55px;
+                        margin: 0 0 0 12px;
+
+                        font-size: 17px;
+
+                        background-color: $red;
                         border-radius: 31px;
                     }
                 }
             }
         }
+        div.copyright,
+        div.addresses {
+            @include right(calc(100% - 320px));
+        }
         div.copyright {
-            float: left;
-            width: 100%;
-            text-align: center;
-            padding-top: 49px;
             font-size: 13px;
+            text-align: center;
         }
         div.addresses {
-            float: left;
-            width: 100%;
-            text-align: center;
-            padding-top: 29px;
+            margin-top: 29px;
+
             font-size: 12px;
             line-height: 23px;
+            text-align: center;
         }
     }
 }
