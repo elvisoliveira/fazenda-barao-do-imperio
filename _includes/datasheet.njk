@@ -3,18 +3,22 @@
     <div class="container">
         {{ title("Ficha Técnica") }}
         <div class="cycle-slideshow"
+            data-cycle-auto-height="container"
             data-cycle-slides="div"
             data-cycle-timeout="0"
             data-cycle-pager=".datasheet-pager .bullets"
-            data-cycle-next=".fa-arrow-right"
-            data-cycle-prev=".fa-arrow-left">
+            data-cycle-next=".datasheet-pager .fa-angle-right"
+            data-cycle-prev=".datasheet-pager .fa-angle-left">
+            <div class="map">
+                {% image "./pictures/datasheet/map.jpg", "Map", [1280], "pictures/datasheet" %}
+            </div>
             <div class="datasheet">
                 <ul>
                     {% for item in datasheet %}
                     <li><span>{{item}}</span></li>
                     {% endfor %}
                 </ul>
-                {% image "./pictures/datasheet/map.jpg", "", [600], "pictures/datasheet" %}
+                {% image "./pictures/datasheet/aerea.jpg", "Aerial View", [600], "pictures/datasheet" %}
             </div>
             <div class="natural-assets">
                 {{ resource("Nascentes, lagos e áreas nativos", naturalAssets) }}
@@ -31,9 +35,9 @@
             </div>
         </div>
         <div class="datasheet-pager">
-            <i class="fas fa-arrow-left fa-2x"></i>
+            <i class="fa fa-angle-left"></i>
             <div class="bullets"></div>
-            <i class="fas fa-arrow-right fa-2x"></i>
+            <i class="fa fa-angle-right"></i>
         </div>
     </div>
 </div>

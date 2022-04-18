@@ -63,6 +63,31 @@ title: Barão do Império - VAZ
                 </div>
                 <div class="schedule-a-visit">
                     <a href="#">Agende uma visita!</a>
+                    <form action="#" id="agende-uma-visita">
+                        <fieldset>
+                            <legend>
+                                Agende uma visita na<br /> Fazenda Barão do Império
+                                <p>
+                                    {{ '/icons/title-left.svg' | svgContents | safe }}
+                                    {{ '/icons/title-right.svg' | svgContents | safe }}
+                                </p>
+                            </legend>
+                            {% set scheduler = [
+                                { name: 'name', label: 'Nome' },
+                                { name: 'phone', label: 'Telefone' },
+                                { name: 'email', label: 'E-mail' },
+                                { name: 'date', label: 'Data de disponibilidade' },
+                                { name: 'time', label: 'Horário de disponibilidade' }
+                            ] %}
+                            {% for item in scheduler %}
+                            <dl>
+                                <dt><label for="{{ item.name }}">{{ item.label }}</label></dt>
+                                <dd><input type="text" placeholder="{{ item.label }}" name="{{ item.name }}" /></dd>
+                            </dl>
+                            {% endfor %}
+                            <input type="submit" value="Enviar" />
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
@@ -113,6 +138,10 @@ title: Barão do Império - VAZ
                     $("li.active").removeClass("active");
                     var tab = $(this).parents("li").attr("class");
                     $("li." + tab).addClass("active");
+                });
+                $("div.schedule-a-visit a").click(function(e) {
+                    e.preventDefault();
+                    $("div.schedule-a-visit form").fadeToggle();
                 });
             });
         </script>

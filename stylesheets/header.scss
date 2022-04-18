@@ -121,6 +121,78 @@ div#header {
                 background: transparent linear-gradient(204deg, #006B3F 0%, #008B52 100%) 0% 0% no-repeat padding-box;
                 box-shadow: 0px 7px 6px #00000029;
             }
+            form {
+                position: relative;
+                z-index: 999;
+                background-color: #006b3f;
+                top: 75px;
+                width: 400px;
+                margin-left: -115px;
+                padding: 15px;
+                float: left;
+                display: none;
+                fieldset {
+                    border: 0;
+                    background-color: #FFF;
+                    float: left;
+                    width: 100%;
+                    border-radius: 5px;
+                    padding-bottom: 15px;
+                    > legend {
+                        float: left;
+                        width: 100%;
+                        text-align: center;
+                        padding-top: 15px;
+                        font-size: 17px;
+                        p {
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 10px;
+                            svg {
+                                width: calc(50% - 65px);
+                            }
+                        }
+                    }
+                    > dl {
+                        margin-top: 15px;
+                        float: left;
+                        width: calc(100% - 50px);
+                        margin-left: 25px;
+                        dt {
+                            display: none;
+                        }
+                        dd {
+                            input {
+                                width: 100%;
+                                box-sizing: border-box;
+                                text-indent: 22px;
+                                height: 32px;
+                                font-size: 12px;
+                                border: 1px solid #A7A7A7;
+                            }
+                        }
+                    }
+                    > input {
+                        float: left;
+                        color: #FFF;
+                        text-decoration: none;
+                        text-align: center;
+                        margin-top: 20px;
+                        height: 44px;
+                        border: 0;
+                        border-radius: 19px;
+                        line-height: 40px;
+                        font-size: 16px;
+                        background: transparent linear-gradient(204deg, var(--unnamed-color-006b3f) 0%, #008B52 100%) 0% 0% no-repeat padding-box;
+                        background: transparent linear-gradient(204deg, #006B3F 0%, #008B52 100%) 0% 0% no-repeat padding-box;
+                        box-shadow: 0px 7px 6px #00000029;
+                        width: 200px;
+                        left: 50%;
+                        position: relative;
+                        margin-left: -100px;
+                    }
+                }
+            }
         }
         div.contact-the-realtor {
             float: right;

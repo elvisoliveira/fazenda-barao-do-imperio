@@ -26,26 +26,34 @@ const sassOptions = {
     sassLocation: path.normalize(path.join(__dirname, "./stylesheets/")),
 };
 
+function generateImage(src, widths, path) {
+    let options = {
+        widths: widths,
+        formats: ["avif", "jpeg"],
+        urlPath: `/${path}/`,
+        outputDir: `./_site/${path}/`,
+        sharpJpegOptions: {
+            quality: 80
+        }
+    };
+    Image(src, options);
+    return Image.statsSync(src, options);
+}
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData("timestamp", Date.now());
     eleventyConfig.addPassthroughCopy("images");
     eleventyConfig.addNunjucksShortcode("image", function (src, alt, widths, path) {
-        let options = {
-            widths: widths,
-            formats: ["avif", "jpeg"],
-            urlPath: `/${path}/`,
-            outputDir: `./_site/${path}/`,
-            sharpJpegOptions: {
-                quality: 80
-            }
-        };
-        Image(src, options);
-        return Image.generateHTML(Image.statsSync(src, options), {
+        return Image.generateHTML(generateImage(src, widths, path), {
             alt,
             undefined,
             loading: "lazy",
             decoding: "async",
         });
+    });
+    eleventyConfig.addNunjucksShortcode("background", function (src, widths, path) {
+        const metadata = generateImage(src, widths, path);
+        return `background-image: url(${metadata.jpeg[0].url});`;
     });
     eleventyConfig.addNunjucksGlobal("list", function (src) {
         const fs = require("fs");
