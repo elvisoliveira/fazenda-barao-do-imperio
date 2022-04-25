@@ -1,6 +1,8 @@
 # Condomínio Fazenda Barão do Império
 
-[fazendabaraodoimperio.com.br](https://fazendabaraodoimperio.com.br/)
+O 1° Condomínio Agrogastronômico do Brasil!
+
+📌 Barra de Mangaraí | Santa Leopoldina | ES
 
 ## Tech Stack: 
 
