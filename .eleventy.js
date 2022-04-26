@@ -42,7 +42,7 @@ function generateImage(src, widths, path) {
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData("timestamp", Date.now());
-    eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("pictures/gallery");
     eleventyConfig.addNunjucksShortcode("image", function (src, alt, widths, path) {
         return Image.generateHTML(generateImage(src, widths, path), {
             alt,
@@ -66,5 +66,8 @@ module.exports = function (eleventyConfig) {
         return path.endsWith(".html")
             ? production ? require("html-minifier").minify(content, minifyOptions) : require("js-beautify").html(content, beautifyOptions)
             : content;
+    });
+    eleventyConfig.addFilter("base64", function(txt) {
+        return Buffer.from(txt).toString('base64');
     });
 };

@@ -2,7 +2,7 @@ div#assets {
     div.container {
         padding-bottom: 50px;
 
-        background: url('../images/assets.jpg') no-repeat left bottom/730px;
+        background: no-repeat left bottom/730px;
         div.assets {
             @include right(485px);
 
@@ -44,11 +44,6 @@ div#assets {
                 }
                 &:first-child {
                     margin-bottom: 50px;
-                }
-                @for $i from 1 through 4 {
-                    &:nth-child(#{$i}) {
-                        background-image: url('../images/icone' + #{$i} + '.svg');
-                    }
                 }
             }
         }

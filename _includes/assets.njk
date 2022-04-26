@@ -1,10 +1,11 @@
 {% from "macros.njk" import title %}
 <div class="section" id="assets">
-    <div class="container">
+    <div class="container" style="{% background './pictures/assets.jpg', [800], 'Assets' %}">
         {{ title("Aqui, a vida te convida a viver bem em todos os sentidos!") }}
         <div class="assets">
             {% for item in assets %}
-            <dl>
+            {% set icon = "/icons/icone" + loop.index + ".svg" %}
+            <dl style="background-image: url('data:image/svg+xml;base64,{{ icon | svgContents | safe | base64 }}')">
                 <dt>{{ item.title }}</dt>
                 <dd>{{ item.description }}</dd>
             </dl>
