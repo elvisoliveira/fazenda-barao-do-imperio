@@ -26,14 +26,16 @@ const sassOptions = {
     sassLocation: path.normalize(path.join(__dirname, "./stylesheets/")),
 };
 
-function generateImage(src, widths, path) {
+function generateImage(src, widths, quality) {
+    let removeFileName = /[^\/](\w+\.\w+$)/i;
+    let path = src.replace(removeFileName, '');
     let options = {
         widths: widths,
         formats: ["avif", "jpeg"],
         urlPath: `/${path}/`,
         outputDir: `./_site/${path}/`,
         sharpJpegOptions: {
-            quality: 80
+            quality: quality || 80
         }
     };
     Image(src, options);
@@ -43,16 +45,16 @@ function generateImage(src, widths, path) {
 module.exports = function (eleventyConfig) {
     eleventyConfig.addGlobalData("timestamp", Date.now());
     eleventyConfig.addPassthroughCopy("pictures/gallery");
-    eleventyConfig.addNunjucksShortcode("image", function (src, alt, widths, path) {
-        return Image.generateHTML(generateImage(src, widths, path), {
+    eleventyConfig.addNunjucksShortcode("image", function (src, alt, widths, quality) {
+        return Image.generateHTML(generateImage(src, widths, quality), {
             alt,
             undefined,
             loading: "lazy",
             decoding: "async",
         });
     });
-    eleventyConfig.addNunjucksShortcode("background", function (src, widths, path) {
-        const metadata = generateImage(src, widths, path);
+    eleventyConfig.addNunjucksShortcode("background", function (src, widths, quality) {
+        const metadata = generateImage(src, widths, quality);
         return `background-image: url(${metadata.jpeg[0].url});`;
     });
     eleventyConfig.addNunjucksGlobal("list", function (src) {

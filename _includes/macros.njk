@@ -43,6 +43,6 @@
 
 {% macro gallery(path, size) %}
     {% for file in list(path) %}
-    <li>{% image "./" + path + "/" + file, "", size, path %}</li>
+    <li>{% image "./" + path + "/" + file, "", size %}</li>
     {% endfor %}
 {% endmacro %}
