@@ -32,7 +32,7 @@ function generateImage(src, widths, quality) {
     let options = {
         widths: widths,
         formats: ["avif", "jpeg"],
-        urlPath: `/${path}/`,
+        urlPath: `/fazenda-barao-do-imperio/${path}/`,
         outputDir: `./_site/${path}/`,
         sharpJpegOptions: {
             quality: quality || 80
